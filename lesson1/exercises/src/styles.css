@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+#everything {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/1280px-Top_of_Atmosphere.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }

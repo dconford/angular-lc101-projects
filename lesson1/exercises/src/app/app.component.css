@@ -1,0 +1,9 @@
+hr {
+    height: 1px;
+    width: 100%;
+    color: #000;
+    background-color: #000;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+}
