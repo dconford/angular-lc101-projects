@@ -1,8 +1,31 @@
-<div class='movies col-4'>
+<!-- <div class='movies col-4' *ngIf ="movies.length > 0; else needMovieValue"> -->
+      <div class='movies col-4'>
     <h3>Movies to Watch</h3>
     <ol>
        <li *ngFor ="let movie of movies">{{movie}}</li>
     </ol>
     <hr>
+    <input #newMovie (keyup.enter)='message = addMovie(newMovie.value); newMovie.value = ""' type='text' placeholder="Enter Movie Title Here"/>
+    <button (click)='message = addMovie(newMovie.value); newMovie.value = ""'>Add Item</button>
+    <p class = "error" *ngIf = "message">{{message}}</p>
 
  </div>
+ <!-- Use *ngIf to display an error message if the user does not enter a title or submits a title that is already on the list. -->
+ <!-- <div class='movies' *ngIf ="movies.length > 0; else needMovieValue">
+      <h3>Movies to Watch</h3>
+      <ol>
+         <li *ngFor ="let movie of movies">{{movie}}</li>
+      </ol>
+   </div>
+    -->
+   <!-- <ng-template #needMovieValue>
+      <div class='movies'>
+         <h3>No Movie or Duplicate Movie Entered!</h3>
+      </div>
+   </ng-template> -->
+
+
+   <!-- <input #newMovie (keyup.enter)="message = addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
+    <button (click)="message = addMovie(newMovie.value); newMovie.value = ''">Add</button>
+    <p class = "error" *ngIf = "message">{{message}}</p>
+    -->
