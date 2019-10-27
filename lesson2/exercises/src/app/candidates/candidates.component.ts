@@ -23,10 +23,33 @@ export class CandidatesComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Code the addToCrew function here:
+    addCrew(newCrewMember: object) {
+    if (!this.crew.includes(newCrewMember)){
+      this.crew.push(newCrewMember);
+    }
+  }
 
+
+  changeMissionName(name: string){
+    this.missionName = name;
+    return false;
+ }
+
+}
+
+  // Code the addToCrew function here:
+//   addCrew (newCrewMember: object) {
+//     let errorMsg = '';
+//     if (this.crew.includes(newCrewMember)) {
+//        errorMsg = `${newCrewMember} is already in your crew list.`;
+//     } else {
+//        this.crew.push(newCrewMember);
+//     }
+//     return errorMsg;
+//  }
 
   // BONUS: Code the changeMissionName function here:
 
 
-}
+
+
