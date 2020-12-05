@@ -23,3 +23,13 @@ button {
 .copper {
    background: #b87333 ;
 }
+
+.cantClick {
+   background: blue;
+}
+
+.runAwayButton {
+   background: yellow;
+   text-align: left;
+   float: right;
+}

@@ -1,7 +1,24 @@
 <div class="buttons">
    <h3>{{buttonHeading}}</h3>
-   <button class="gold">Gold</button> <br>
-   <button class="silver">Silver</button> <br>
-   <button class="copper">Copper</button> <hr>
-   <button>Activate/Deactivate Buttons</button>
+   <button [class.gold]="!inactiveGold" [disabled]="inactiveGold" (click)="inactiveGold = true">Gold</button> <br>
+   <button [class.silver]="!inactiveSilver" [disabled]="inactiveSilver" (click)="inactiveSilver = true">Silver</button> <br>
+   <button [class.copper]="!inactiveCopper" [disabled]="inactiveCopper" (click)="inactiveCopper = true">Copper</button> <hr>
+   <button (click)="reactivateButtons()">Reactivate Buttons</button>
 </div>
+<hr>
+<div class="buttons">
+   <h3>{{jokeHeading}}</h3>
+   <!-- <button [class.cantClick] = "!inactiveCantClick" [disabled]="inactiveCantClick" (mouseenter)="inactiveCantClick = true" (mouseleave)="inactiveCantClick = false">Click Here!</button> -->
+   <div (mouseleave)="inactiveCantClick = false">
+      <button [class.cantClick] = "!inactiveCantClick" [disabled]="inactiveCantClick" (mouseenter)="inactiveCantClick = true">Click Here!</button>
+   </div>
+</div>
+
+<!-- <div class="buttons">
+   <button [class.runAwayButton] = "!runAwayToLeft" (mouseenter)="runAwayToLeft = true">Catch Me!</button>
+</div> -->
+
+<hr>
+   <div [align]="location" (mouseover)="location = shiftLocation(location)">
+      <button class="silver">Catch Me!</button>
+   </div>
